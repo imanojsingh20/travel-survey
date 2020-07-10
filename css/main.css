@@ -1,0 +1,179 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth; }
+
+body {
+  color: #fff;
+  background: url("https://source.unsplash.com/oCdVtGFeDC0/") center top/cover no-repeat;
+  background-attachment: fixed;
+  font-family: "Roboto", sans-serif; }
+
+.button-success {
+  background-color: #27ae60 !important;
+  border-color: #27ae60 !important; }
+
+input[type="radio"] {
+  width: 2.5vh;
+  height: 2.5vh; }
+
+input[type="checkbox"] {
+  width: 2.8vh;
+  height: 2.8vh; }
+
+button {
+  justify-self: center;
+  align-self: center; }
+  button a {
+    text-decoration: none;
+    color: #fff; }
+
+#home-sec {
+  height: 100vh;
+  position: relative; }
+
+#home-sec::after,
+form::after {
+  content: "";
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%; }
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+#home-container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  margin-top: 5rem;
+  align-self: center;
+  justify-self: center; }
+  #home-container .row {
+    padding: 10rem 0.5rem;
+    text-align: justify;
+    display: flex;
+    align-items: center; }
+    #home-container .row p {
+      font-size: 2.2vh; }
+      #home-container .row p span {
+        font-size: 4vh; }
+    #home-container .row .to-survey {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+  #home-container .tagline {
+    margin: 1rem 0.5rem 5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+    #home-container .tagline p:first-child {
+      margin-bottom: 1rem;
+      font-weight: 100;
+      font-family: "Roboto", sans-serif;
+      line-height: 1;
+      font-size: 5vh; }
+    #home-container .tagline p:last-child {
+      margin: 0;
+      font-size: 2vh; }
+      #home-container .tagline p:last-child i {
+        padding: 0 0.5rem; }
+      #home-container .tagline p:last-child i:first-child {
+        transform: rotate(90deg); }
+      #home-container .tagline p:last-child i:last-child {
+        transform: rotate(270deg); }
+    #home-container .tagline span {
+      display: block;
+      font-weight: 700; }
+
+#main-survey {
+  scroll-behavior: smooth;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; }
+  #main-survey #q1 h2 {
+    font-weight: 500; }
+
+.survey-card {
+  height: 100vh;
+  align-items: flex-start;
+  justify-content: center; }
+  .survey-card .nav-btn {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .survey-card .nav-btn a,
+    .survey-card .nav-btn input[type="submit"] {
+      margin: 0 5vh; }
+  .survey-card p {
+    font-weight: 500;
+    font-size: 2vh; }
+  .survey-card .ques {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); }
+    .survey-card .ques h4 {
+      font-weight: 500; }
+    .survey-card .ques .checkbox .issue {
+      display: flex;
+      align-items: center;
+      align-content: center; }
+      .survey-card .ques .checkbox .issue label {
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+        font-size: 2.5vh;
+        align-self: center;
+        font-weight: 400; }
+    .survey-card .ques .rating-radio {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+    .survey-card .ques .rating-num {
+      font-size: 2.5vh;
+      font-family: monospace;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      .survey-card .ques .rating-num label:last-child {
+        margin-left: -1.2vh; }
+
+#final-step .info {
+  margin: 0 auto;
+  padding: 2vh 8vh;
+  background-color: rgba(244, 244, 244, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  width: 100%; }
+
+label {
+  display: block;
+  padding: 0.2rem; }
+
+form {
+  margin-bottom: 0;
+  position: relative; }
+
+@media (max-width: 500px) {
+  .row {
+    flex-direction: column; }
+  #home-container .row {
+    padding: 5rem 0.5rem; } }
