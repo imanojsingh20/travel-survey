@@ -74,6 +74,8 @@ form::after {
       display: flex;
       flex-direction: column;
       justify-content: center; }
+    #home-container .row .intro a {
+      display: none; }
   #home-container .tagline {
     margin: 1rem 0.5rem 5rem 0.5rem;
     display: flex;
@@ -177,4 +179,8 @@ form {
   .row {
     flex-direction: column; }
   #home-container .row {
-    padding: 5rem 0.5rem; } }
+    padding: 5rem 0.5rem; }
+    #home-container .row .to-survey a {
+      display: none; }
+    #home-container .row .intro a {
+      display: block; } }
