@@ -68,7 +68,8 @@ form::after {
     #home-container .row p {
       font-size: 2.2vh; }
       #home-container .row p span {
-        font-size: 4vh; }
+        font-size: 4vh;
+        display: block; }
     #home-container .row .to-survey {
       display: flex;
       flex-direction: column;
