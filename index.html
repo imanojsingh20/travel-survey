@@ -82,16 +82,16 @@
               <label>10</label>
             </div>
             <div class="rating-radio">
-              <input name="rate" name="1" type="radio" />
-              <input name="rate" name="2" type="radio" />
-              <input name="rate" name="3" type="radio" />
-              <input name="rate" name="4" type="radio" />
-              <input name="rate" name="5" type="radio" />
-              <input name="rate" name="6" type="radio" />
-              <input name="rate" name="7" type="radio" />
-              <input name="rate" name="8" type="radio" />
-              <input name="rate" name="9" type="radio" />
-              <input name="rate" name="10" type="radio" />
+              <input name="rate" value="1" type="radio" />
+              <input name="rate" value="2" type="radio" />
+              <input name="rate" value="3" type="radio" />
+              <input name="rate" value="4" type="radio" />
+              <input name="rate" value="5" type="radio" />
+              <input name="rate" value="6" type="radio" />
+              <input name="rate" value="7" type="radio" />
+              <input name="rate" value="8" type="radio" />
+              <input name="rate" value="9" type="radio" />
+              <input name="rate" value="10" type="radio" />
             </div>
           </div>
           <div class="nav-btn">
@@ -170,57 +170,43 @@
 
             <div class="checkbox">
               <div class="issue">
-                <input
-                  type="checkbox"
-                  name="response1"
-                  value="Very satisfied"
-                />
+                <input type="radio" name="response" value="Very satisfied" />
                 <label for="issue">Very satisfied</label>
               </div>
               <div class="issue">
                 <input
-                  type="checkbox"
-                  name="response2"
+                  type="radio"
+                  name="response"
                   value="Somewhat satisfied"
                 />
                 <label for="issue">Somewhat satisfied</label>
               </div>
               <div class="issue">
                 <input
-                  type="checkbox"
-                  name="response3"
+                  type="radio"
+                  name="response"
                   value="Neither satisfied nor dissatisfied"
                 />
                 <label for="issue">Neither satisfied nor dissatisfied </label>
               </div>
               <div class="issue">
                 <input
-                  type="checkbox"
-                  name="response4"
+                  type="radio"
+                  name="response"
                   value="Somewhat dissatisfied"
                 />
                 <label for="issue">Somewhat dissatisfied </label>
               </div>
               <div class="issue">
-                <input
-                  type="checkbox"
-                  name="response5"
-                  value="Very dissatisfied"
-                />
+                <input type="radio" name="response" value="Very dissatisfied" />
                 <label for="issue">Very dissatisfied</label>
               </div>
               <div class="issue">
-                <input
-                  type="checkbox"
-                  name="response6"
-                  value="Can't say
-
-                "
-                />
+                <input type="radio" name="response" value="Can't say" />
                 <label for="issue">Can't say</label>
               </div>
               <div class="issue">
-                <input type="checkbox" name="response7" value="Others" />
+                <input type="radio" name="response" value="Others" />
                 <label for="issue">Others</label>
               </div>
             </div>
@@ -240,7 +226,7 @@
               class="u-full-width"
               placeholder="Enter Your Answer Here"
               name="responsetext"
-              form="usrform"
+              id="responsemsg"
             ></textarea>
           </div>
           <div class="nav-btn">
@@ -257,15 +243,15 @@
 
             <div class="checkbox">
               <div class="issue">
-                <input type="checkbox" name="ans1" value="yes" />
+                <input type="radio" name="ans" value="yes" />
                 <label for="issue">Yes</label>
               </div>
               <div class="issue">
-                <input type="checkbox" name="ans2" value="no" />
+                <input type="radio" name="ans" value="no" />
                 <label for="issue">No</label>
               </div>
               <div class="issue">
-                <input type="checkbox" name="ans3" value="maybe" />
+                <input type="radio" name="ans" value="maybe" />
                 <label for="issue">Maybe</label>
               </div>
             </div>
