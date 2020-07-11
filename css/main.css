@@ -74,7 +74,10 @@ form::after {
     #home-container .row .to-survey {
       display: flex;
       flex-direction: column;
-      justify-content: center; }
+      justify-content: center;
+      animation: moveInLeft 0.8s ease-out; }
+    #home-container .row .intro {
+      animation: moveInRight 0.8s ease-out; }
   #home-container #startBtn {
     display: flex;
     width: 100%;
@@ -85,7 +88,8 @@ form::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center; }
+    text-align: center;
+    animation: moveInBottom 0.8s ease-out; }
     #home-container .tagline p:first-child {
       margin-bottom: 1rem;
       font-weight: 100;
@@ -202,7 +206,8 @@ button {
   padding: 0px;
   overflow: hidden;
   transition: all 0.5s;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  animation: moveInBig 0.8s ease-out; }
 
 button span {
   position: absolute;
@@ -283,3 +288,27 @@ button:hover {
 
 button:hover span {
   animation-play-state: paused; }
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(100%); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes moveInBig {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
