@@ -296,7 +296,7 @@
             <label type="email">Email: </label>
             <input class="u-full-width" type="email" name="email" required />
             <label for="text">Number: </label>
-            <input type="hidden" id="country" name="country" />
+            <input type="hidden" id="code" name="code" value="1" />
             <input
               class="u-full-width"
               type="tel"
@@ -318,15 +318,19 @@
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/intlTelInput.min.js"></script>
-    <script>
-      var input = $("#phone");
-      var country = $("#country");
-      var iti = intlTelInput(input.get(0));
-
-      // listen to the telephone input for changes
-      input.on("countrychange", function (e) {
-        // change the hidden input value to the selected country code
-        country.val(iti.getSelectedCountryData().iso2);
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#phone")
+          .intlTelInput({
+            preferredCountries: ["us", "ca"],
+            separateDialCode: true,
+            initialCountry: "",
+          })
+          .on("countrychange", function (e, countryData) {
+            $("#code").val(
+              $("#phone").intlTelInput("getSelectedCountryData").dialCode
+            );
+          });
       });
     </script>
     <script>
@@ -356,10 +360,6 @@
         // preferredCountries: ['cn', 'jp'],
         // separateDialCode: true,
         utilsScript: "js/utils.js",
-      });
-
-      $("form").submit(function () {
-        $("#phone2").val($("#phone").intlTelInput("getNumber"));
       });
     </script>
   </body>
