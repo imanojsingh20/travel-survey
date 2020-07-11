@@ -193,8 +193,10 @@ form {
     flex-direction: column; }
   #home-container .row .to-survey a {
     display: none; }
-  #home-container .row .intro a {
-    display: block; }
+  #home-container .row .intro {
+    padding-top: 2rem; }
+    #home-container .row .intro a {
+      display: block; }
   #home-container #startBtn {
     padding: 3rem 0; } }
 
