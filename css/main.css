@@ -32,7 +32,8 @@ button {
     text-decoration: none;
     color: #fff; }
 
-.iti__country-list {
+.iti__country-list,
+.iti__flag-container {
   color: #777; }
 
 #home-sec {
