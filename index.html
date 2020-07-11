@@ -23,6 +23,8 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" href="./css/intlTelInput.min.css" />
+
     <link rel="stylesheet" href="./css/main.css" />
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -97,7 +99,7 @@
               <label>10</label>
             </div>
             <div class="rating-radio">
-              <input name="rate" value="1" type="radio" />
+              <input name="rate" value="1" type="radio" required />
               <input name="rate" value="2" type="radio" />
               <input name="rate" value="3" type="radio" />
               <input name="rate" value="4" type="radio" />
@@ -185,7 +187,12 @@
 
             <div class="checkbox">
               <div class="issue">
-                <input type="radio" name="response" value="Very satisfied" />
+                <input
+                  type="radio"
+                  name="response"
+                  value="Very satisfied"
+                  required
+                />
                 <label for="issue">Very satisfied</label>
               </div>
               <div class="issue">
@@ -242,6 +249,7 @@
               placeholder="Enter Your Answer Here"
               name="responsetext"
               id="responsemsg"
+              required
             ></textarea>
           </div>
           <div class="nav-btn">
@@ -258,16 +266,16 @@
 
             <div class="checkbox">
               <div class="issue">
-                <input type="radio" name="ans" value="yes" />
-                <label for="issue">Yes</label>
+                <input type="radio" name="ans" value="yes" required />
+                <label for="ans">Yes</label>
               </div>
               <div class="issue">
                 <input type="radio" name="ans" value="no" />
-                <label for="issue">No</label>
+                <label for="ans">No</label>
               </div>
               <div class="issue">
                 <input type="radio" name="ans" value="maybe" />
-                <label for="issue">Maybe</label>
+                <label for="ans">Maybe</label>
               </div>
             </div>
           </div>
@@ -284,11 +292,17 @@
             </h4>
 
             <label for="name">Name: </label>
-            <input class="u-full-width" type="text" name="name" />
+            <input class="u-full-width" type="text" name="name" required />
             <label type="email">Email: </label>
-            <input class="u-full-width" type="email" name="email" />
+            <input class="u-full-width" type="email" name="email" required />
             <label for="text">Number: </label>
-            <input class="u-full-width" type="text" name="number" />
+            <input
+              class="u-full-width"
+              type="tel"
+              id="phone"
+              name="number"
+              required
+            />
           </div>
           <div class="nav-btn">
             <a class="button button-primary" href="#q5">Previous</a>
@@ -301,5 +315,36 @@
         </div>
       </form>
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/intlTelInput.min.js"></script>
+    <script>
+      var input = document.querySelector("#phone");
+      window.intlTelInput(input, {
+        // allowDropdown: false,
+        // autoHideDialCode: false,
+        // autoPlaceholder: "off",
+        // dropdownContainer: document.body,
+        // excludeCountries: ["us"],
+        // formatOnDisplay: false,
+        initialCountry: "auto",
+        geoIpLookup: function (success, failure) {
+          $.get("https://ipinfo.io", function () {}, "jsonp").always(function (
+            resp
+          ) {
+            var countryCode = resp && resp.country ? resp.country : "";
+            success(countryCode);
+          });
+        },
+        // hiddenInput: "full_number",
+        // initialCountry: "auto",
+        // localizedCountries: { 'de': 'Deutschland' },
+        // nationalMode: false,
+        // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+        // placeholderNumberType: "MOBILE",
+        // preferredCountries: ['cn', 'jp'],
+        // separateDialCode: true,
+        utilsScript: "js/utils.js",
+      });
+    </script>
   </body>
 </html>

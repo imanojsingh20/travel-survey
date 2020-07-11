@@ -32,6 +32,9 @@ button {
     text-decoration: none;
     color: #fff; }
 
+.iti__flag-container {
+  color: #777; }
+
 #home-sec {
   height: 100vh;
   position: relative; }
