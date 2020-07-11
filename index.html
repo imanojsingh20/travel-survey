@@ -296,6 +296,7 @@
             <label type="email">Email: </label>
             <input class="u-full-width" type="email" name="email" required />
             <label for="text">Number: </label>
+            <input type="hidden" id="phone2" name="phone" />
             <input
               class="u-full-width"
               type="tel"
@@ -344,6 +345,14 @@
         // preferredCountries: ['cn', 'jp'],
         // separateDialCode: true,
         utilsScript: "js/utils.js",
+      });
+
+      $("form").submit(function () {
+        var full_number = phone_number.getNumber(
+          intlTelInputUtils.numberFormat.E164
+        );
+        $("input[name='phone_number[full]'").val(full_number);
+        console.log(full_number);
       });
     </script>
   </body>
