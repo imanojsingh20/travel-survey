@@ -296,7 +296,7 @@
             <label type="email">Email: </label>
             <input class="u-full-width" type="email" name="email" required />
             <label for="text">Number: </label>
-            <input type="hidden" name="phone_number[full_number]" value="" />
+            <input type="hidden" name="phone_number[full]" />
             <input
               class="u-full-width"
               type="tel"
@@ -336,14 +336,14 @@
             success(countryCode);
           });
         },
-        hiddenInput: "full_number",
+        hiddenInput: "full",
         // initialCountry: "auto",
         // localizedCountries: { 'de': 'Deutschland' },
         // nationalMode: false,
         // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
         // placeholderNumberType: "MOBILE",
         // preferredCountries: ['cn', 'jp'],
-        // separateDialCode: true,
+        separateDialCode: true,
         utilsScript: "js/utils.js",
       });
     </script>
