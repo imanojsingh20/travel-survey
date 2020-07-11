@@ -274,7 +274,6 @@
                 <label for="ans">No</label>
               </div>
               <div class="issue">
-                <input type="radio" name="ans" value="maybe" />
                 <label for="ans">Maybe</label>
               </div>
             </div>
@@ -318,21 +317,6 @@
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/intlTelInput.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $("#phone")
-          .intlTelInput({
-            preferredCountries: ["us", "ca"],
-            separateDialCode: true,
-            initialCountry: "",
-          })
-          .on("countrychange", function (e, countryData) {
-            $("#code").val(
-              $("#phone").intlTelInput("getSelectedCountryData").dialCode
-            );
-          });
-      });
-    </script>
     <script>
       var input = document.querySelector("#phone");
       window.intlTelInput(input, {
