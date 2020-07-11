@@ -62,20 +62,20 @@ form::after {
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  margin-top: 5rem;
   align-self: center;
   justify-self: center;
   justify-content: center; }
   #home-container .row {
     text-align: justify;
     display: flex;
-    align-items: center; }
+    align-items: flex-start;
+    flex-direction: column; }
+    #home-container .row span {
+      font-size: 4vh;
+      display: block; }
     #home-container .row p {
       font-size: 2.2vh;
       margin: 0; }
-      #home-container .row p span {
-        font-size: 4vh;
-        display: block; }
     #home-container .row .to-survey {
       display: flex;
       flex-direction: column;
@@ -86,9 +86,9 @@ form::after {
   #home-container #startBtn {
     display: flex;
     width: 100%;
-    justify-content: center; }
+    justify-content: center;
+    padding: 4rem 0; }
   #home-container .tagline {
-    margin: 1rem 0.5rem 5rem 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,7 +194,9 @@ form {
   #home-container .row .to-survey a {
     display: none; }
   #home-container .row .intro a {
-    display: block; } }
+    display: block; }
+  #home-container #startBtn {
+    padding: 3rem 0; } }
 
 button {
   margin: 3rem 0;
