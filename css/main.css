@@ -192,12 +192,12 @@ form {
 
 button {
   margin: 3rem 0;
-  width: 30rem;
-  height: 70px;
+  width: 25rem;
+  height: 6rem;
   background: linear-gradient(to left top, #33c3f0 50%, #33c3f0 50%);
   border-style: none;
   color: #fff;
-  font-size: 23px;
+  font-size: 1.8rem;
   letter-spacing: 3px;
   font-weight: 600;
   outline: none;
