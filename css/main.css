@@ -11,7 +11,7 @@ body {
   background: url("https://source.unsplash.com/bs1eqd6zSiU/") center right/cover no-repeat;
   background-attachment: fixed;
   font-family: "Roboto", sans-serif;
-  overflow-x: hidden; }
+  overflow: hidden; }
 
 .button-success {
   background-color: #27ae60 !important;
@@ -68,7 +68,8 @@ form::after {
     display: flex;
     align-items: center; }
     #home-container .row p {
-      font-size: 2.2vh; }
+      font-size: 2.2vh;
+      margin: 0; }
       #home-container .row p span {
         font-size: 4vh;
         display: block; }
