@@ -79,7 +79,13 @@
     </section>
 
     <section id="main-survey">
-      <form name="survey" method="POST" data-netlify="true">
+      <!-- data-netlify="true" -->
+      <form
+        name="survey"
+        method="POST"
+        action="submit.php"
+        onsubmit="return validation()"
+      >
         <div class="survey-card container" id="q1">
           <h2>Customize Your Travel Agency</h2>
           <p>The survey will take approximately 2 minutes to complete.</p>
@@ -128,7 +134,7 @@
               <div class="issue">
                 <input
                   type="checkbox"
-                  name="issue"
+                  name="issue[]"
                   value="Tedious Booking Proxess"
                 />
                 <label for="issue">Tedious Booking Process</label>
@@ -136,7 +142,7 @@
               <div class="issue">
                 <input
                   type="checkbox"
-                  name="issue"
+                  name="issue[]"
                   value="Bad Customer Process"
                 />
                 <label for="issue">Bad Customer Process</label>
@@ -144,7 +150,7 @@
               <div class="issue">
                 <input
                   type="checkbox"
-                  name="issue"
+                  name="issue[]"
                   value="Lack of Ownership and Responsibilty"
                 />
                 <label for="issue">Lack of Ownership and Responsibilty</label>
@@ -152,7 +158,7 @@
               <div class="issue">
                 <input
                   type="checkbox"
-                  name="issue"
+                  name="issue[]"
                   value="Long wait for Refunds"
                 />
                 <label for="issue">Long wait for Refunds</label>
@@ -160,17 +166,17 @@
               <div class="issue">
                 <input
                   type="checkbox"
-                  name="issue"
+                  name="issue[]"
                   value="Didn't value your business"
                 />
                 <label for="issue">Didn't value your business</label>
               </div>
               <div class="issue">
-                <input type="checkbox" name="issue" value="no issues" />
+                <input type="checkbox" name="issue[]" value="no issues" />
                 <label for="issue">no issues</label>
               </div>
               <div class="issue">
-                <input type="checkbox" name="issue" value="Others" />
+                <input type="checkbox" name="issue[]" value="Others" />
                 <label for="issue">Others</label>
               </div>
             </div>
@@ -306,6 +312,8 @@
               name="number"
               required
             />
+            <span id="valid-msg" class="hide">✓ Valid</span>
+            <span id="error-msg" class="hide"></span>
           </div>
           <div class="nav-btn">
             <a class="button button-primary" href="#q5">Previous</a>
@@ -322,7 +330,7 @@
     <script src="js/intlTelInput.min.js"></script>
     <script>
       var input = document.querySelector("#phone");
-      window.intlTelInput(input, {
+      var iti = window.intlTelInput(input, {
         // allowDropdown: false,
         // autoHideDialCode: false,
         // autoPlaceholder: "off",
@@ -348,6 +356,58 @@
         separateDialCode: true,
         utilsScript: "js/utils.js",
       });
+
+      var input = document.querySelector("#phone"),
+        errorMsg = document.querySelector("#error-msg"),
+        validMsg = document.querySelector("#valid-msg");
+
+      // here, the index maps to the error code returned from getValidationError - see readme
+      var errorMap = [
+        "Invalid number",
+        "Invalid country code",
+        "Too short",
+        "Too long",
+        "Invalid number",
+      ];
+
+      // initialise plugin
+      // var iti = window.intlTelInput(input, {
+      //   utilsScript: "build/js/utils.js",
+      // });
+
+      var reset = function () {
+        input.classList.remove("error");
+        errorMsg.innerHTML = "";
+        errorMsg.classList.add("hide");
+        validMsg.classList.add("hide");
+      };
+      // on blur: validate
+      input.addEventListener("blur", function (event) {
+        reset();
+        validation();
+      });
+
+      function validation() {
+        if (input.value.trim()) {
+          if (iti.isValidNumber()) {
+            validMsg.classList.remove("hide");
+            return true;
+          } else {
+            input.classList.add("error");
+            if (iti.getValidationError() < 0) {
+              var errorCode = 0;
+            } else {
+              var errorCode = iti.getValidationError();
+            }
+            errorMsg.innerHTML = errorMap[errorCode];
+            errorMsg.classList.remove("hide");
+            return false;
+          }
+        }
+      }
+      // on keyup / change flag: reset
+      input.addEventListener("change", reset);
+      input.addEventListener("keyup", reset);
     </script>
   </body>
 </html>
