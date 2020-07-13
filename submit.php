@@ -13,10 +13,10 @@ $ipaddress = $_SERVER['REMOTE_ADDR'];
 
 
 if (!empty($name) || !empty($email) || !empty($number) || !empty($rate) || !empty($response) || !empty($ans)) {
-    $host = "localhost";
-       $dbUsername = "root";
-       $dbPassword = "";
-       $dbname = "survey";
+    $host = "https://databases.000webhost.com/";
+       $dbUsername = "id13970748_travelhorse";
+       $dbPassword = "Anonymous4u@";
+       $dbname = "id13970748_survey";
        //create connection
        $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
        if (mysqli_connect_error()) {
